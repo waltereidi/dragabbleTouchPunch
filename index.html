@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Sortable - Default functionality</title>
+    <style>
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 60%;
+        }
+
+        #sortable li {
+            margin: 0 3px 3px 3px;
+            padding: 0.4em;
+            padding-left: 1.5em;
+            font-size: 1.4em;
+            height: 18px;
+        }
+
+        #sortable li span {
+            position: absolute;
+            margin-left: -1.3em;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script>
+        $(function () {
+            $("#sortable").sortable({
+                change: function(event , ui){
+               
+                    console.log($(document).find("li").parent())
+                    console.log($(document).find("li"))
+
+                }
+
+             });
+            $(".ui-state-default").each(()=>{
+                $(this).draggable();
+                
+            });
+        });
+        function getPosition( )
+        {
+
+        }
+    </script>
+</head>
+
+<body>
+<button onclick="getPosition()">Get Position</button>
+    <ul id="sortable">
+        <li  data-ordem="1" class="ui-state-default l1"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+        <li  data-ordem="2" class="ui-state-default l2"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+        <li  data-ordem="3" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+        <li  data-ordem="4" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+        <li  data-ordem="5" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+        <li  data-ordem="6" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+        <li  data-ordem="7" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+    </ul>
+
+
+</body>
+
+</html>
